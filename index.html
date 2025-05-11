@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Modern Smooth Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 15px rgb(102 126 234 / 0.5);
+  }
+
+  header h1 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.2rem;
+  }
+
+  header p {
+    font-weight: 300;
+    font-size: 1.25rem;
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    color: white;
+    font-weight: 600;
+    margin: 0 1rem;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+
+  nav a:hover::after,
+  nav a:focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  main {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  section {
+    margin-bottom: 4rem;
+  }
+
+  section h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    color: #4a4a4a;
+    margin-bottom: 1rem;
+    border-left: 6px solid #667eea;
+    padding-left: 1rem;
+  }
+
+  .intro {
+    font-size: 1.125rem;
+    color: #555;
+    max-width: 720px;
+    letter-spacing: 0.015em;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.07);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .project-card:hover,
+  .project-card:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgb(102 126 234 / 0.3);
+  }
+
+  .project-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .project-content {
+    padding: 1rem 1.25rem 1.5rem;
+  }
+
+  .project-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  .project-description {
+    font-weight: 300;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.4;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .skill {
+    background: #e0e7ff;
+    color: #4a4a4a;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .skill:hover {
+    background-color: #667eea;
+    color: white;
+  }
+
+  footer {
+    background: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive mobile fit optimization */
+  @media (max-width: 400px) {
+    header h1 {
+      font-size: 1.75rem;
+    }
+    header p {
+      font-size: 1rem;
+    }
+    nav a {
+      margin: 0 0.5rem;
+      font-size: 0.9rem;
+    }
+    main {
+      padding: 1.5rem 1rem;
+    }
+    section h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Alex Morgan</h1>
+  <p>Full Stack Developer & UI/UX Enthusiast</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<main>
+  <section id="about" class="intro">
+    <h2>About Me</h2>
+    <p>Hello! I'm Alex, a passionate and creative full stack developer who loves crafting smooth modern websites with slick user experiences. I specialize in JavaScript, React, Node.js, and modern CSS techniques to bring ideas to life on the web.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <article tabindex="0" class="project-card">
+        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&q=80" alt="Portfolio Website screenshot" class="project-image" />
+        <div class="project-content">
+          <h3 class="project-title">Portfolio Website</h3>
+          <p class="project-description">A sleek and responsive portfolio website showcasing my projects and skills with modern design and smooth animations.</p>
+          <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+      <article tabindex="0" class="project-card">
+        <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=800&q=80" alt="Task Manager App screenshot" class="project-image" />
+        <div class="project-content">
+          <h3 class="project-title">Task Manager App</h3>
+          <p class="project-description">A smooth single-page task manager app with drag and drop functionality and local persistence for productivity boost.</p>
+          <div class="skills">
+            <span class="skill">React</span>
+            <span class="skill">Redux</span>
+            <span class="skill">CSS-in-JS</span>
+          </div>
+        </div>
+      </article>
+
+      <article tabindex="0" class="project-card">
+        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80" alt="E-commerce Platform screenshot" class="project-image" />
+        <div class="project-content">
+          <h3 class="project-title">E-commerce Platform</h3>
+          <p class="project-description">A modern, clean e-commerce platform with intuitive UI, smooth product browsing and secure checkout.</p>
+          <div class="skills">
+            <span class="skill">Node.js</span>
+            <span class="skill">Express</span>
+            <span class="skill">MongoDB</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>I'd love to hear from you! Feel free to reach out for collaborations, freelancing, or just to say hello.</p>
+    <form style="max-width:500px; margin-top:1rem;">
+      <label for="name" style="display:block; margin-bottom:0.25rem;">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required style="width:100%; padding:0.5rem; border-radius:4px; border:1px solid #ccc; font-size:1rem;"/>
+      
+      <label for="email" style="display:block; margin:1rem 0 0.25rem;">Email</label>
+      <input type="email" id="email" name="email" placeholder="your.email@example.com" required style="width:100%; padding:0.5rem; border-radius:4px; border:1px solid #ccc; font-size:1rem;"/>
+      
+      <label for="message" style="display:block; margin:1rem 0 0.25rem;">Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required style="width:100%; padding:0.5rem; border-radius:4px; border:1px solid #ccc; font-size:1rem; resize:none;"></textarea>
+      
+      <button type="submit" style="margin-top:1rem; background: linear-gradient(135deg,#667eea,#764ba2); color:white; padding:0.75rem 1.5rem; border:none; border-radius:25px; font-weight:600; font-size:1.1rem; cursor:pointer; transition: background 0.3s ease;">Send Message</button>
+    </form>
+  </section>
+</main>
+<footer>
+  &copy; 2024 Alex Morgan - Crafted with passion & smooth vibes
+</footer>
+</body>
+</html>
+
+```
